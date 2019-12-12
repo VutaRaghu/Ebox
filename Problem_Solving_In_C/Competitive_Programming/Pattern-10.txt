@@ -1,0 +1,93 @@
+#include<stdio.h>
+void mpattern(int);
+void spattern(int);
+void dpattern(int);
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    mpattern(n);
+    printf("\n");
+    spattern(n);
+    printf("\n");
+    dpattern(n);
+    return 0;
+}
+
+void mpattern(int n)
+{
+    int i,j;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if(j==1||j==n)
+            {
+                printf("M");
+            }
+            else if(((i==j)&&(i<=(n/2)+1))||((i+j==n+1)&&(i<=(n/2)+1)))
+            {
+                printf("M");
+            }
+            else
+            {
+                printf(".");
+            }
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+void spattern(int n)
+{
+    int i,j;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if(i==1||i==n||i==(n/2)+1)
+            {
+                printf("S");
+            }
+            else if((j==1&&i<(n/2)+1)||((j==n)&&(i>(n/2)+1)))
+            {
+                printf("S");
+            }
+            else
+            {
+                printf(".");
+            }
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
+void dpattern(int n)
+{
+    int i,j;
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if((j==1)||((j==n)&&(i!=1)&&(i!=n))||(i==1&&j!=n)||(i==n&&j!=n))
+            {
+                printf("D");
+            }
+            
+            else
+            {
+                printf(".");
+            }
+        }
+        printf("\n");
+    }
+    
+}

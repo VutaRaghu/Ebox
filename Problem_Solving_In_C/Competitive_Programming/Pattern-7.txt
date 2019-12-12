@@ -1,0 +1,49 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j,rem;
+    scanf("%d",&n);
+    rem=n/3;
+    for(i=1;i<=n;i++)
+    {
+        if(i<=rem)
+        {
+            for(j=1;j<=rem;j++)
+            {
+                printf("C");
+            }
+            for(;j<=2*rem;j++)
+            {
+                printf("S");
+            }
+            for(;j<=3*rem;j++)
+            {
+                printf("K");
+            }
+        }
+        else if(i<=2*rem)
+        {
+            for(j=1;j<=rem;j++)
+            {
+                printf("S");
+            }
+            for(;j<=3*rem;j++)
+            {
+                printf(".");
+            }
+        }
+        else
+        {
+            for(j=1;j<=rem;j++)
+            {
+                printf("K");
+            }
+            for(;j<=3*rem;j++)
+            {
+                printf(".");
+            }
+        }
+        
+        printf("\n");
+    }
+}
